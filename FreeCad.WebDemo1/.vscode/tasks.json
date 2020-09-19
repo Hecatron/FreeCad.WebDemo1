@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "tslint all",
+            "command": "node ClientApp/node_modules/tslint/bin/tslint -c .vscode/tslint.json --exclude 'ClientApp/node_modules/**/*.{j,t}s' **/*.ts",
+            "type": "shell",
+            "problemMatcher": {
+                "owner": "tslint",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
+                "severity":  "warning",
+                "pattern": {
+                    "regexp": "^(.*)\\[(\\d+), (\\d+)\\]:\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "message": 4
+                }
+            }
+        }
+    ]
+}

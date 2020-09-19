@@ -1,0 +1,41 @@
+{
+
+  // Use eslint for typescript linting
+  "eslint.validate": ["typescript", "typescriptreact"],
+
+  // Use python within the virtual environment
+  "python.pythonPath": "C:/ProgramData/chocolatey/lib/freecad/tools/FreeCAD_0.19.22411-Win-Conda_vc14.x-x86_64/bin/python.exe",
+  // Additional autocompletion search directories
+  "python.autoComplete.extraPaths": [
+      // Path to the addon source module
+      "./",
+      // Special modules that emulate PySide for PySide2 for Qt5
+      "C:/ProgramData/chocolatey/lib/freecad/tools/FreeCAD_0.19.22411-Win-Conda_vc14.x-x86_64/Ext/"
+  ],
+
+  // Global enable linting
+  "python.linting.enabled": true,
+
+  // Pep8 linting
+  "python.linting.pycodestyleEnabled": true,
+  // We need to do things a little different for FreeCad, calling pycodestyle.exe directly doesn't work
+  // Probably something to do with a subprocess
+  "python.linting.pycodestylePath": "C:/ProgramData/chocolatey/lib/freecad/tools/FreeCAD_0.19.22411-Win-Conda_vc14.x-x86_64/bin/python.exe",
+  "python.linting.pycodestyleArgs": ["-m", "pycodestyle", "--ignore","E501,E265,E266"],
+
+  // pylint linting
+  "python.linting.pylintEnabled": false,
+  "python.linting.pylintPath": "C:/ProgramData/chocolatey/lib/freecad/tools/FreeCAD_0.19.22411-Win-Conda_vc14.x-x86_64/bin/Scripts/pylint",
+  // Use a configuration file for pylint, we need to add in additional search directories
+  // using init_hook to find source outside of site_packages
+  "python.linting.pylintArgs": [
+    "--rcfile", "${workspaceFolder}/.vscode/pylint.cfg"
+  ],
+
+  // Ignore intermediary files
+  "files.exclude": {
+    "**/*.pyc": true,
+    "**/__pycache__": true,
+    "**/.sconsign.dblite": true,
+  },
+}

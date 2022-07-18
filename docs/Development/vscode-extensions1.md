@@ -2,6 +2,7 @@
 
 Typically this is what I used for web / Python extensions within VSCode:
 
+```
 aaron-bond.better-comments
 aaronpowell.vscode-profile-switcher
 auchenberg.vscode-browser-preview
@@ -48,3 +49,5 @@ webrender.synthwave-x-fluoromachine
 xabikos.JavaScriptSnippets
 yzhang.markdown-all-in-one
 Zignd.html-css-class-completion
+hediet.debug-visualizer
+```
